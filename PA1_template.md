@@ -25,7 +25,7 @@ stepsInDay <- tapply(stepsData$steps, stepsData$date, sum)
 hist(stepsInDay, main = "Histogram of steps in a day", xlab = "Steps in day", ylab = "Count")
 ```
 
-![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2.png) 
+![plot of chunk unnamed-chunk-2](figure/unnamed-chunk-2-1.png) 
 
 Then we compute and display the mean and median of the number of steps in a day
 
@@ -66,9 +66,9 @@ plot(intervals, meanStepsInIntervals, type = "l",
      main = "Average steps in 5 minute intervals")
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
-Next we find the 5 minute interval with the maxiumum steps avearegd across all days
+Next we find the 5 minute interval with the maxiumum steps averaged across all days
 
 
 ```r
@@ -84,7 +84,7 @@ sprintf("The interval with the maxiumun number of steps across all days is %f", 
 
 ## Imputing missing values
 
-In this section, the missing data is replaced by statistics of the available data. I have chosen to repalce the missing data in any 5 minute interval by the average of the data across the same 5 minute interval averaged across all days. Obviously, the average does not include the NA data.
+In this section, the missing data is replaced by statistics of the available data. I have chosen to replace the missing data in any 5 minute interval by the average of the data across the same 5 minute interval averaged across all days. Obviously, the average does not include the NA data.
 
 First we find the number of rows with missing data
 
@@ -123,7 +123,7 @@ hist(imputedStepsInDay, main = "Histogram of imputed steps in a day",
      xlab = "Imputed steps in day", ylab = "Count")
 ```
 
-![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8.png) 
+![plot of chunk unnamed-chunk-8](figure/unnamed-chunk-8-1.png) 
 
 ```r
 # Compute the mean and median of stepsInDay
@@ -165,7 +165,7 @@ Now we plot average number of steps in 5 minutes intervals for weekdays and week
 
 
 ```r
-par(mfrow = c(1,2))
+par(mfrow = c(2,1))
 plot(intervals, xx$weekday, type = "l",
      xlab = "Time interval", ylab = "Average steps",
      main = "Average steps in 5 minute intervals for weekdays")
@@ -174,4 +174,4 @@ plot(intervals, xx$weekend, type = "l",
      main = "Average steps in 5 minute intervals for weekends")
 ```
 
-![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 

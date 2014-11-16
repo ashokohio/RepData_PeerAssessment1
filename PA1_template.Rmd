@@ -49,7 +49,7 @@ plot(intervals, meanStepsInIntervals, type = "l",
      main = "Average steps in 5 minute intervals")
 ```
 
-Next we find the 5 minute interval with the maxiumum steps avearegd across all days
+Next we find the 5 minute interval with the maxiumum steps averaged across all days
 
 ```{r}
 # Get the interval index of the maximum of meanStepsInIntervals
@@ -60,7 +60,7 @@ sprintf("The interval with the maxiumun number of steps across all days is %f", 
 
 ## Imputing missing values
 
-In this section, the missing data is replaced by statistics of the available data. I have chosen to repalce the missing data in any 5 minute interval by the average of the data across the same 5 minute interval averaged across all days. Obviously, the average does not include the NA data.
+In this section, the missing data is replaced by statistics of the available data. I have chosen to replace the missing data in any 5 minute interval by the average of the data across the same 5 minute interval averaged across all days. Obviously, the average does not include the NA data.
 
 First we find the number of rows with missing data
 
@@ -117,7 +117,7 @@ xx <- as.data.frame(tapply(imputedStepsData$steps, list(as.factor(imputedStepsDa
 Now we plot average number of steps in 5 minutes intervals for weekdays and weekends separately.
 
 ```{r}
-par(mfrow = c(1,2))
+par(mfrow = c(2,1))
 plot(intervals, xx$weekday, type = "l",
      xlab = "Time interval", ylab = "Average steps",
      main = "Average steps in 5 minute intervals for weekdays")
